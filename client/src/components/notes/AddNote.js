@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import { useQuill } from 'react-quilljs';
 import {  Button, InputGroup,Icon } from 'rsuite';
 import Spinner from '../layout/Spinner'
 import { addNote } from '../../actions/notes'
@@ -21,10 +20,8 @@ const AddNote = ({addNote, auth :{ isAuthenticated},  notes : {loading}}) => {
         e.preventDefault();
         addNote({ title, note })
     }
-    const onClear = e =>{
-        {setFormData({title: '',note: ''})}
-    }
-    const { quill, quillRef } = useQuill();
+    const onClear = e =>{setFormData({title: '',note: ''})}
+    
     return (
         <Fragment>
           { loading && isAuthenticated ? (<Spinner/>) : (

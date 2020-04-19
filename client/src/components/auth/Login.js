@@ -8,11 +8,6 @@ import { connect } from 'react-redux'
 
 const Login = ({ login, isAuthenticated }) => {
 
-    const styles={
-        width:"60%",
-        marginBottom:20,
-        marginLeft: 30
-      }
       const [formData, setFormData] = useState({
         email:'',
         password:''
@@ -33,7 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <div>
-            <section className="container" style={styles}>
+            <section className="container" >
       <h1 className="large text-primary">
         Sign In
       </h1>

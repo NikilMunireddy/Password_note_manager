@@ -45,9 +45,7 @@ export const NavBar =  ({ auth: { isAuthenticated, loading, user}, logout}) => {
     </Fragment>
   )
 
-  const navBarStyles={
-    position: "fixed",
-  }
+
     return (
       <Navbar>
         <Navbar.Body>

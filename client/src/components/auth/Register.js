@@ -1,5 +1,5 @@
 import React , { Fragment, useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { InputGroup, Icon, Button } from 'rsuite';
 import { connect } from 'react-redux';
 import { register } from '../../actions/auth'
@@ -7,11 +7,7 @@ import PropTypes from 'prop-types'
 
 const Register = ({register}) => {
     
-    const styles={
-        width:"60%",
-        marginBottom:20,
-        marginLeft: 30
-      }
+
 
     const [formData, setFormData] = useState({
         name:'',
@@ -33,13 +29,13 @@ const Register = ({register}) => {
 
     return (
         <Fragment>
-            <section className="container" style={styles}>
+            <section className="container">
       <h1 className="large text-primary">
         Create account
       </h1>
       <p className="lead"><i className="fas fa-user"></i> Create new Account</p>
       <form className="form">
-      <div className="form-group">
+      <div className="form-group" >
             <InputGroup >
                 <InputGroup.Addon><Icon icon="avatar" /></InputGroup.Addon>
                 <input type="text" placeholder="Name" name='name' value={name} onChange={e=> onChange(e)} />
@@ -47,7 +43,7 @@ const Register = ({register}) => {
         </div>
         <div className="form-group">
             <InputGroup >
-                <InputGroup.Addon><Icon icon="avatar" /></InputGroup.Addon>
+                <InputGroup.Addon><i className="fa fa-envelope" aria-hidden="true"></i></InputGroup.Addon>
                 <input type="email" placeholder="Email Address" name='email' value={email} onChange={e=> onChange(e)} />
             </InputGroup>
         </div>

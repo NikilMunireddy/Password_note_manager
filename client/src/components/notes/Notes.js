@@ -1,9 +1,7 @@
-import React , { Fragment, useEffect, useState }from 'react'
-import AddNote from './AddNote' 
-import { useQuill } from 'react-quilljs';
+import React , { Fragment, useEffect }from 'react'
 import PropTypes from 'prop-types'
 import {  Button, Row, Panel } from 'rsuite';
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getNotes, deleteNote } from '../../actions/notes'
 
@@ -19,7 +17,6 @@ const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loadin
         width: "100%"
       }
 
-    const { quill, quillRef } = useQuill();
 
     return (
         <Fragment>
