@@ -44,7 +44,7 @@ export const addPassword= ({ title, accountId, password}) => async dispatch =>{
             type: PWD_ERROR,
             payload: errors
         })
-        dispatch(setAlert("Could not add password. Check your internet connection", 'danger'))
+        dispatch(setAlert("Could not add password. Check your internet connection", 'warning'))
     }
 }
 

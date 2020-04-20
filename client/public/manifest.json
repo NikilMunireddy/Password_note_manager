@@ -1,9 +1,9 @@
 {
   "short_name": "Vault",
-  "name": "Good Day",
+  "name": "Vault Project",
   "icons": [
     {
-      "src": "vault.png",
+      "src": "vaultnew.png",
       "sizes": "192x192",
       "type": "image/png"
     }

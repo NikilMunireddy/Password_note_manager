@@ -44,7 +44,7 @@ export const addNote = ({ title, note }) => async dispatch =>{
             type: ADD_NOTE_ERROR,
             payload: errors
         })
-        dispatch(setAlert('Could not add note, Check your internet connection', 'danger'))
+        dispatch(setAlert('Could not add note, Check your internet connection', 'warning'))
     }
 }
 
@@ -56,7 +56,7 @@ export const deleteNote = noteId => async dispatch =>{
         dispatch({
             type: DELETE_NOTE,
         })
-       dispatch( setAlert("Note deleted", 'danger'))
+       dispatch( setAlert("Note deleted", 'error'))
     } catch (err) {
         dispatch({
             type: DELETE_NOTE_ERROR,

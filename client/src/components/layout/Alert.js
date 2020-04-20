@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Message } from 'rsuite';
+
 
 const Alert = ({alerts}) => 
     alerts !== null && alerts.length >0 && alerts.map(alert => (
-    <div key={alert.id} className={`alert alert-${alert.alertType}`}>
-        {alert.msg}
+    <div key={alert.id}>
+           <Message showIcon type={alert.alertType} description={alert.msg} />
     </div>
     ));
 

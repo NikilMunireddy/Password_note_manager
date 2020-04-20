@@ -26,7 +26,7 @@ const Register = ({setAlert, register}) => {
         }
         else{
              console.log(" password does not match")
-             setAlert('Passwords do not match', 'danger', 3000)
+             setAlert('Passwords do not match', 'error', 3000)
         }
     }
 

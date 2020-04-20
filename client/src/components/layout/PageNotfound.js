@@ -1,5 +1,5 @@
 import React from 'react'
-import weed from '../../img/spinner.gif';
+import weed from '../../img/canalol.gif';
 
 const PageNotfound = () => {
     return (

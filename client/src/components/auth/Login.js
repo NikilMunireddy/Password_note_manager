@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
       <h1 className="large text-primary">
         Sign In
       </h1>
-      <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p>
+      <p className="lead"><i className="fas fa-user"></i> SignIn Into Your Account</p>
       <form className="form">
         <div className="form-group">
             <InputGroup >

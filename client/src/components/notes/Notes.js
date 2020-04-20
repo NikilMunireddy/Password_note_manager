@@ -4,6 +4,7 @@ import {  Button, Row, Panel } from 'rsuite';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getNotes, deleteNote } from '../../actions/notes'
+import Spinner from '../layout/Spinner'
 
 const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loading, notes} }) => {
 
@@ -21,23 +22,25 @@ const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loadin
     return (
         <Fragment>
             {
-                notes.map((note, index)=>(
-                    <Row key={index}>
-                        <Panel header={note.title}  bordered>
-                            <div>
-                                { note.note.map((n, index)=>(
-                                     <div key={index}  style={{"color": "red"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
-                                        ))}
-                             </div>
-                             <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deleteNote(note._id)
-                             getNotes()
-                         }}  >
-                            <i  style={{"color": "red", "position": "fixed", "right": "10%"}} className="fa fa-trash" aria-hidden="true"/> Delete
-                        </Button>
-                        <br/>
-                        </Panel>
-                    </Row>
-                ))
+                loading ? (<Spinner/>): (
+                    notes.map((note, index)=>(
+                        <Row key={index}>
+                            <Panel header={note.title}  bordered>
+                                <div>
+                                    { note.note.map((n, index)=>(
+                                         <div key={index}  style={{"color": "red"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
+                                            ))}
+                                 </div>
+                                 <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deleteNote(note._id)
+                                 getNotes()
+                             }}  >
+                                <i  style={{"color": "red", "position": "fixed", "right": "10%"}} className="fa fa-trash" aria-hidden="true"/> Delete
+                            </Button>
+                            <br/>
+                            </Panel>
+                        </Row>
+                    ))
+                )
             }
 
             <Link to='/addnote' style={buttomStyles}>
