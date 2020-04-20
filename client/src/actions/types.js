@@ -14,5 +14,8 @@ export const GET_NOTE ='GET_NOTE';
 export const NOTE_ERROR = 'NOTE_ERROR'
 export const ADD_NOTE = 'ADD_NOTE';
 export const ADD_NOTE_ERROR = 'ADD_NOTE_ERROR';
-export const DELETE_NOTE = 'DELETE_NOTE'
-export const DELETE_NOTE_ERROR = 'DELETE_NOTE_ERROR'
+export const DELETE_NOTE = 'DELETE_NOTE';
+export const DELETE_NOTE_ERROR = 'DELETE_NOTE_ERROR';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const SET_ALERT = 'SET_ALERT';
+

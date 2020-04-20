@@ -4,11 +4,11 @@ import { InputGroup, Icon, Button } from 'rsuite';
 import { connect } from 'react-redux';
 import { register } from '../../actions/auth'
 import PropTypes from 'prop-types'
+import { setAlert } from '../../actions/alert';
 
-const Register = ({register}) => {
+
+const Register = ({setAlert, register}) => {
     
-
-
     const [formData, setFormData] = useState({
         name:'',
         email:'',
@@ -24,7 +24,10 @@ const Register = ({register}) => {
         if(password === password1){
             register({ name, email, password })
         }
-        else console.log(" password does not match")
+        else{
+             console.log(" password does not match")
+             setAlert('Passwords do not match', 'danger', 3000)
+        }
     }
 
     return (
@@ -73,6 +76,7 @@ const Register = ({register}) => {
 
 Register.propTypes = {
 register : PropTypes.func.isRequired,
+setAlert: PropTypes.func.isRequired,
 }
 
-export default connect(null, {register})(Register)
+export default connect(null, {register, setAlert})(Register)

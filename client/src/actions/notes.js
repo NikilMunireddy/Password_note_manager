@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { setAlert } from './alert'
 import { GET_NOTE, NOTE_ERROR, ADD_NOTE, ADD_NOTE_ERROR, DELETE_NOTE, DELETE_NOTE_ERROR } from './types'
 
 // GET all Notes
@@ -33,7 +34,7 @@ export const addNote = ({ title, note }) => async dispatch =>{
             type: ADD_NOTE,
             payload: res.data
         });
-
+        dispatch(setAlert('Note added', 'success'))
     } catch (err) {
         const errors = err.response.data.errors;  // errors array
         if(errors){
@@ -43,6 +44,7 @@ export const addNote = ({ title, note }) => async dispatch =>{
             type: ADD_NOTE_ERROR,
             payload: errors
         })
+        dispatch(setAlert('Could not add note, Check your internet connection', 'danger'))
     }
 }
 
@@ -54,6 +56,7 @@ export const deleteNote = noteId => async dispatch =>{
         dispatch({
             type: DELETE_NOTE,
         })
+       dispatch( setAlert("Note deleted", 'danger'))
     } catch (err) {
         dispatch({
             type: DELETE_NOTE_ERROR,

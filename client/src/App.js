@@ -6,6 +6,7 @@ import setAuthToken from './utils/setAuthToken'
 import { loadUser } from './actions/auth';
 import NavBar from './components/layout/NavBar'
 import Login from './components/auth/Login'
+import Alert from './components/layout/Alert'
 import Register from './components/auth/Register'
 import Landing from './components/layout/Landing'
 import Password from './components/Passwords/Password'
@@ -31,6 +32,7 @@ const App = () => {
       <Router>
         <Fragment>
            <NavBar />
+           <Alert />
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route exact path='/login' component={Login} />

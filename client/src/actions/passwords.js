@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { setAlert } from './alert'
 import {GET_PWD, PWD_ERROR, ADD_PWD, DELETE_PWD, DELETE_ERROR } from './types'
 
 // GET all passwords 
@@ -33,7 +34,7 @@ export const addPassword= ({ title, accountId, password}) => async dispatch =>{
             type: ADD_PWD,
             payload: res.data
         });
-
+        dispatch( setAlert("Password Added", 'success'))
     } catch (err) {
         const errors = err.response.data.errors;  // errors array
         if(errors){
@@ -43,6 +44,7 @@ export const addPassword= ({ title, accountId, password}) => async dispatch =>{
             type: PWD_ERROR,
             payload: errors
         })
+        dispatch(setAlert("Could not add password. Check your internet connection", 'danger'))
     }
 }
 
