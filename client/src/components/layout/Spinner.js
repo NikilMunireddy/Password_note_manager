@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react';
-import spinner from '../../img/loading.gif';
+import { Placeholder } from 'rsuite';
+import spinner from '../../img/spinner.gif';
 
-export default () => (
-  <Fragment>
-    <img
-      src={spinner}
-      style={{ width: '75%', margin: 'auto', display: 'block' }}
-      alt='Loading...'
-    />
-  </Fragment>
-);
+export default () => {
+  const { Paragraph } = Placeholder;
+  return(
+      <Fragment>
+          <img
+            src={spinner}
+            style={{ width: '15%', margin: 'auto', display: 'block' }}
+            alt='Loading...'
+          />
+          <Paragraph style={{ marginTop: 30 }} graph="circle" active/>
+          <Paragraph style={{ marginTop: 30 }} graph="square" active/>
+          <Paragraph style={{ marginTop: 30 }} graph="image" active/>
+      </Fragment>
+    )
+};

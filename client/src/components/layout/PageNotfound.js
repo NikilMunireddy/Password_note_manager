@@ -1,5 +1,5 @@
 import React from 'react'
-import weed from '../../img/canalol.gif';
+import img from '../../img/canalol.gif';
 
 const PageNotfound = () => {
     return (
@@ -8,7 +8,7 @@ const PageNotfound = () => {
             <h1 className="large text-primary">
             &nbsp;&nbsp;&nbsp; Page Not found :( 
             </h1>
-            <img  src={weed} alt="404 page not found :("/>
+            <img  src={img} alt="404 page not found :("/>
         </div>
     )
 }

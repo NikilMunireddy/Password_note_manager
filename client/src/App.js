@@ -14,6 +14,7 @@ import Notes from './components/notes/Notes'
 import AddNote from './components/notes/AddNote'
 import PageNotfound from './components/layout/PageNotfound'
 import PrivateRoute from './components/routing/PrivateRoute'
+import AddPassword from './components/Passwords/AddPassword'
 import 'rsuite/dist/styles/rsuite-default.css';
 import './App.css'
 
@@ -38,6 +39,7 @@ const App = () => {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <PrivateRoute exact path='/passwords' component={Password} />
+                <PrivateRoute exact path='/addpassword' component={AddPassword} />
                 <PrivateRoute exact path='/notes' component={Notes} />
                 <PrivateRoute exact path='/addnote' component={AddNote} />
                 <Route component={PageNotfound} />

@@ -52,11 +52,11 @@ export const addNote = ({ title, note }) => async dispatch =>{
 export const deleteNote = noteId => async dispatch =>{
 
     try {
-        const res = await axios.get(`/api/notes/remove/${noteId}`);
+        await axios.get(`/api/notes/remove/${noteId}`);
         dispatch({
             type: DELETE_NOTE,
         })
-       dispatch( setAlert("Note deleted", 'error'))
+       dispatch(setAlert("Note deleted", 'error'))
     } catch (err) {
         dispatch({
             type: DELETE_NOTE_ERROR,

@@ -53,7 +53,7 @@ export const addPassword= ({ title, accountId, password}) => async dispatch =>{
 export const deletePassword = passwordID => async dispatch =>{
 
     try {
-        const res = await axios.get(`/api/passwords/remove/${passwordID}`);
+        await axios.get(`/api/passwords/remove/${passwordID}`);
         dispatch({
             type: DELETE_PWD,
         })
