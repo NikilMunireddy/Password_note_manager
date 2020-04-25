@@ -34,7 +34,7 @@ const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loadin
                                  <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deleteNote(note._id)
                                  getNotes()
                              }}  >
-                                <i  style={{"color": "red", "position": "fixed", "right": "10%"}} className="fa fa-trash" aria-hidden="true"/> Delete
+                                <p  style={{"color": "red"}}  aria-hidden="true"> Delete </p>
                             </Button>
                             <br/>
                             </Panel>

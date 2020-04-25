@@ -37,11 +37,10 @@ const Password = ({ getPasswords, addPassword, deletePassword, auth :{ isAuthent
                         <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deletePassword(pwd._id)
                         getPasswords()
                         }}  >
-                            <i  style={{"color": "red", "position": "fixed", "right": "10%"}} className="fa fa-trash" aria-hidden="true"/> Delete
+                            <p  style={{"color": "red"}}  aria-hidden="true"> Delete </p>
                         </Button>
                           </div>
-                
-                </Panel>
+                    </Panel>
                 ))}
                     </PanelGroup>
                     </Fragment>
