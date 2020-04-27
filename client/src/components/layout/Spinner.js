@@ -8,7 +8,7 @@ export default () => {
       <Fragment>
           <img
             src={spinner}
-            style={{ width: '15%', margin: 'auto', display: 'block' }}
+            style={{ width: '35%', margin: 'auto', display: 'block' }}
             alt='Loading...'
           />
           <Paragraph style={{ marginTop: 30 }} graph="circle" active/>

@@ -28,7 +28,7 @@ const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loadin
                             <Panel header={note.title}  bordered>
                                 <div>
                                     { note.note.map((n, index)=>(
-                                         <div key={index}  style={{"color": "red"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
+                                         <div key={index}  style={{"color": "grey"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
                                             ))}
                                  </div>
                                  <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deleteNote(note._id)
