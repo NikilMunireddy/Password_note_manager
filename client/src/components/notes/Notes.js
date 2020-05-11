@@ -31,8 +31,11 @@ const Notes = ({getNotes, deleteNote , auth :{ isAuthenticated}, notes : {loadin
                                          <div key={index}  style={{"color": "grey"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
                                             ))}
                                  </div>
-                                 <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ deleteNote(note._id)
-                                 getNotes()
+                                 <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ if(window.confirm(" Are you sure !")){
+                                     deleteNote(note._id);
+                                     getNotes()
+                                 }
+                                 
                              }}  >
                                 <p  style={{"color": "red"}}  aria-hidden="true"> Delete </p>
                             </Button>

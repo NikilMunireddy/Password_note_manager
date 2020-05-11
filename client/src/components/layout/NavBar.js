@@ -51,7 +51,7 @@ export const NavBar =  ({ auth: { isAuthenticated, loading, user}, logout}) => {
         <Navbar.Body>
           {!loading && (<Fragment>  { isAuthenticated ? authLinks : guestLinks} </Fragment>)}
         </Navbar.Body>
-        
+
       </Navbar>
     );
   };

@@ -1,4 +1,0 @@
-{
-    "mongoURI" :"mongodb+srv://projectVault:nikilvaultproject@projectvault-rxsuq.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtsecret": "G827rR7u0g3N617OU_AxXg"
-}
