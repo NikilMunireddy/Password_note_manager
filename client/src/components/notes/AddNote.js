@@ -19,11 +19,12 @@ const AddNote = ({addNote, auth :{ isAuthenticated},  notes : {loading}}) => {
     const onSubmit = async e =>{
         e.preventDefault();
         addNote({ title, note })
+        setFormData({ ...formData, [title]: '', [note]: ''})
     }
     const onClear = e =>{setFormData({title: '',note: ''})}
     
     return (
-        <Fragment>
+        <Fragment >
           { loading && isAuthenticated ? (<Spinner/>) : (
                <form className="form">
                <div className="form-group">
