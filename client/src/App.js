@@ -22,6 +22,10 @@ if (localStorage.token) {
   setAuthToken(localStorage.token)
 }
 
+setInterval(()=>{
+  window.location.reload();
+}, 312000)
+
 const App = () => {
 
   useEffect(()=>{

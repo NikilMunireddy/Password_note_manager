@@ -30,7 +30,7 @@ const Notes = ({ getNotes, deleteNote, auth: { isAuthenticated }, notes: { loadi
                                     { note.note.map((n, index)=>(
                                             <div key={index}  style={{"color": "grey"}}><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp; {n}</div>
                                          ))}
-                                        <Button color="" style={{ "position": "fixed", "right": "10%" }} onClick={e => {
+                                        <Button color="" style={{"position": "absolute", "right": "10%" }} onClick={e => {
                                             if (window.confirm('Are You sure!!!')) {
                                                 deleteNote(note._id)
                                                 getNotes()

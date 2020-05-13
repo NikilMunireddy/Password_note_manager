@@ -34,7 +34,7 @@ const Password = ({ getPasswords, addPassword, deletePassword, auth :{ isAuthent
                         <p style={{"color": "green"}}><Icon icon="avatar" /> &nbsp;{pwd.accountId}</p>
                             <br/>
                         <div style={{"color": "blue"}}><i className="fa fa-lock" aria-hidden="true"/> &nbsp;{pwd.password}
-                        <Button color="" style={{"position": "fixed", "right": "10%"}} onClick={e=>{ if(window.confirm('Are You sure!!!')){
+                        <Button color="" style={{"position": "absolute", "right": "10%" }} onClick={e=>{ if(window.confirm('Are You sure!!!')){
                             deletePassword(pwd._id)
                             getPasswords()
                         }
