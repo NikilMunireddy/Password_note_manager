@@ -3,6 +3,8 @@ const connectDB =require('./config/db')
 const path =require('path');
 var compression = require('compression')
 
+
+
 const app = express();
 
 //connnect to DB
@@ -17,6 +19,7 @@ Should be commented or application error will pop on heroku
 app.get('/',(req, res)=> res.send('ok')); */
 
 //Define routesrs
+
 app.use(compression())
 app.use('/api/users', require('./routers/api/users'));
 app.use('/api/auth', require('./routers/api/auth'));
