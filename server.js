@@ -4,7 +4,6 @@ const path =require('path');
 var compression = require('compression')
 
 
-
 const app = express();
 
 //connnect to DB
