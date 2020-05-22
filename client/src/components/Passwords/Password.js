@@ -15,8 +15,9 @@ const Password = ({ getPasswords, addPassword, deletePassword, auth :{ isAuthent
     
         const buttomStyles={
             position: "fixed",
-            bottom: "10px",
-            width: "100%"
+            bottom: "0px",
+            width: "100%",
+            height:"9%"
           }
 
     if(! isAuthenticated){
@@ -26,9 +27,9 @@ const Password = ({ getPasswords, addPassword, deletePassword, auth :{ isAuthent
     return (
         <Fragment>
             {(isAuthenticated &&  passwords === []) || ( isAuthenticated && loading) ? (<Spinner />): (
-                <Fragment> 
-                    <Fragment> 
-                    <PanelGroup accordion bordered>
+                <div> 
+                    <div style={{width: "100%"}}> 
+                    <PanelGroup accordion bordered >
                         {passwords.map((pwd, index)=> (
                     <Panel  key={index} header={pwd.title}>
                         <p style={{"color": "green"}}><Icon icon="avatar" /> &nbsp;{pwd.accountId}</p>
@@ -39,20 +40,20 @@ const Password = ({ getPasswords, addPassword, deletePassword, auth :{ isAuthent
                             getPasswords()
                         }
                         }}  >
-                            <p  style={{"color": "red"}}  aria-hidden="true"> Delete </p>
+                            <i style={{ "color": "red" }} className="fa fa-trash" aria-hidden="true"></i>
                         </Button>
                           </div>
                     </Panel>
                 ))}
                     </PanelGroup>
-                    </Fragment>
+                    </div>
                     
                     <Link to='/addpassword' style={buttomStyles}>
                         <Button color="blue" style={buttomStyles} >
-                            <i className="fa fa-lock" aria-hidden="true"></i> &nbsp;Add Password  
+                            <h4><i className="fa fa-lock" aria-hidden="true"></i> &nbsp;Add Password  </h4>
                         </Button>
                     </Link>
-                </Fragment>
+                </div>
             )}
         </Fragment>
     )

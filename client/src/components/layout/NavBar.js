@@ -24,7 +24,6 @@ export const NavBar =  ({ auth: { isAuthenticated, loading, user}, logout}) => {
         
     </Nav>
     <Nav pullRight> 
-  <Nav.Item > <i className="fa fa-lock" aria-hidden="true"></i> &nbsp; Vault Project </Nav.Item>
   </Nav>
     </Fragment>
   );

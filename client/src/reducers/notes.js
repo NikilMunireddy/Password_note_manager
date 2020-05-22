@@ -1,4 +1,4 @@
-import { GET_NOTE, NOTE_ERROR, ADD_NOTE, ADD_NOTE_ERROR, DELETE_NOTE, DELETE_NOTE_ERROR } from '../actions/types'
+import { GET_NOTE, NOTE_ERROR, ADD_NOTE, ADD_NOTE_ERROR, DELETE_NOTE, DELETE_NOTE_ERROR, UPDATE_NOTE, UPDATE_NOTE_ERROR } from '../actions/types'
 
 const initailState = {
     loading: true,
@@ -11,6 +11,7 @@ export default function(state= initailState, action){
 
     switch(type) {
         case GET_NOTE:
+        case UPDATE_NOTE:
         case ADD_NOTE:
             return {
                 ...state,
@@ -20,6 +21,7 @@ export default function(state= initailState, action){
         case DELETE_NOTE:
             return state
         case NOTE_ERROR:
+        case UPDATE_NOTE_ERROR:
         case DELETE_NOTE_ERROR:
         case ADD_NOTE_ERROR:
             return {

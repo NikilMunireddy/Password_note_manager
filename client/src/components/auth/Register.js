@@ -63,7 +63,7 @@ const Register = ({setAlert, register}) => {
         </InputGroup>
         </div>
         <Button color="green" onClick=  {e => onSubmit(e)} >
-            <i className="fa fa-key" aria-hidden="true"></i> &nbsp;Register
+            <i className="fa fa-pen" aria-hidden="true"></i> &nbsp;Register
         </Button>
       </form>
       <p className="my-1">
