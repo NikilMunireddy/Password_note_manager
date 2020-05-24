@@ -31,15 +31,14 @@ const Notes = ({ getNotes, deleteNote, updateNote, auth: { isAuthenticated }, no
         e.preventDefault();
         setFormData({ ...formData, [title]: '', [note]: '' })
     }
-    const onClear = e => { setFormData({ title: '', note: '' }) }
 
     // collect edit note details 
     const editNote = (n_id, tit, data) => {
-        var data_list = []
-        data.map((d) => { data_list.push(d + " ....") })
-        setFormData({ ...formData, [title]: tit })
-        setFormData({ ...formData, [note]: data_list })
+        var data_list = ""
+        
+        setFormData({ title: tit, note: data.join("....\n") })
         changeNoteID(n_id)
+        console.log(tit)
         changeEdit(!isEdit);
     }
 
@@ -49,7 +48,6 @@ const Notes = ({ getNotes, deleteNote, updateNote, auth: { isAuthenticated }, no
         width: "100%",
         height: "9%"
     }
-
 
     return (
         <Fragment>

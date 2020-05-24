@@ -48,6 +48,7 @@ router.put('/', auth, [
     check('title', 'Title text is required').not().isEmpty(),
 ], async(req, res) => {
     const errors = validationResult(req);
+    console.log(req.body)
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })
     }
