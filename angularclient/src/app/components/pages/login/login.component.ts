@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Login } from '../../../models/Login';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  login: Login = {
+    email:'',
+    password:''
+  }
+  
 
   constructor() { }
 

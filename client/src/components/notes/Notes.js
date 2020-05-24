@@ -34,11 +34,8 @@ const Notes = ({ getNotes, deleteNote, updateNote, auth: { isAuthenticated }, no
 
     // collect edit note details 
     const editNote = (n_id, tit, data) => {
-        var data_list = ""
-        
         setFormData({ title: tit, note: data.join("....\n") })
         changeNoteID(n_id)
-        console.log(tit)
         changeEdit(!isEdit);
     }
 
