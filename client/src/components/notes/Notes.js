@@ -16,6 +16,14 @@ const Notes = ({ getNotes, deleteNote, updateNote, auth: { isAuthenticated }, no
 
     const [isEdit, changeEdit] = useState(false);
     const [note_id, changeNoteID] = useState("");
+    const windowsize = () =>{
+        if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)){
+            return "xs"
+        }
+        else{
+            return "lg"
+        }
+    }
 
     const [formData, setFormData] = useState({
 
@@ -52,7 +60,7 @@ const Notes = ({ getNotes, deleteNote, updateNote, auth: { isAuthenticated }, no
                 loading ? (<Spinner />) : (
                     <Fragment>
                         <div>
-                            <Modal show={isEdit} onHide={e => changeEdit(!isEdit)} size="xs">
+                            <Modal show={isEdit} onHide={e => changeEdit(!isEdit)} size={windowsize}>
                                 <Modal.Header>
                                     <Modal.Title>Edit Note</Modal.Title>
                                 </Modal.Header>
