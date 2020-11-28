@@ -20,3 +20,9 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const SET_ALERT = 'SET_ALERT';
 export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const UPDATE_NOTE_ERROR = 'UPDATE_NOTE_ERROR';
+export const ADD_EXPENSE ='ADD_EXPENSE';
+export const DELETE_EXPENSE ='DELETE_EXPENSE';
+export const UPDATE_EXPENSE ='UPDATE_EXPENSE';
+export const GET_EXPENSE ='GET_EXPENSE';
+
+

@@ -7,7 +7,6 @@ import { logout } from '../../actions/auth'
 
 export const NavBar =  ({ auth: { isAuthenticated, loading, user}, logout}) => {
 
-
   const authLinks =(
     <Fragment>
       <Nav >
@@ -21,7 +20,6 @@ export const NavBar =  ({ auth: { isAuthenticated, loading, user}, logout}) => {
         <a onClick={logout} href="/">
           <Fragment><Nav.Item > <i className="fas fa-sign-out-alt" ></i> &nbsp;<Fragment className="hide-sm">Logout</Fragment></Nav.Item></Fragment>
         </a>
-        
     </Nav>
     <Nav pullRight> 
   </Nav>

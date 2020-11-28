@@ -8,6 +8,7 @@ const auth= require('../../middleware/auth')
 const Users = require('../../models/Users')
 
 
+
 //@route    GET api/auth
 // @desc    Check if authenticated 
 //@Access   Public 
@@ -33,14 +34,13 @@ router.post('/', [
     check('password','Password auth required').exists()
 ],
 async (req, res)=> {
-    console.log(req.body)
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(400).json({errors: errors.array()})
     }
 
     const { email, password} =req.body;
-
+    
     try {
         let user = await Users.findOne({email});
         console.log(user)

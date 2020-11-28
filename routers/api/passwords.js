@@ -4,6 +4,7 @@ const auth = require('../../middleware/auth')
 const { check, validationResult } = require('express-validator')
 const Password = require('../../models/Password')
 const Users = require('../../models/Users')
+const { encrypt, decrypt } = require('../../middleware/encryption')
 
 
 // @route    POST api/passwords
@@ -27,9 +28,9 @@ router.post('/', [auth, [
         }
 
         const newPassword = new Password({
-            title: req.body.title,
-            accountId: req.body.accountId,
-            password: req.body.password,
+            title: encrypt(req.body.title),
+            accountId: encrypt(req.body.accountId),
+            password: encrypt(req.body.password),
             user: req.user.id
         });
         const passwordObj = await newPassword.save();
@@ -47,9 +48,17 @@ router.post('/', [auth, [
 //@Access   Private
 
 router.get('/', auth, async(req, res) => {
+    var alldecyptedPassword  =[];
     try {
-        const allPassword = await Password.find({ user: req.user.id }).sort({ date: -1 });
-        res.json(allPassword);
+        var allPassword = await Password.find({ user: req.user.id }).sort({ date: -1 });
+        allPassword.map( passwd => alldecyptedPassword.unshift({
+            title : decrypt(passwd.title),
+            accountId : decrypt(passwd.accountId),
+            password : decrypt(passwd.password),
+            user : passwd.user
+        }))
+        console.log(alldecyptedPassword)
+        res.json(alldecyptedPassword);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
